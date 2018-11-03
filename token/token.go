@@ -13,23 +13,71 @@ const (
 	EOF = "EOF" // Tells the parser when to stop
 
 	// Identifiers + literals
-	IDENT = "IDENT" // add, foobar, x, y, ...
-	INT   = "INT"   // 1343456
+	IDENT  = "IDENT"  // add, foobar, x, y, ...
+	NUMBER = "NUMBER" // 1343456
 
 	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN    = "="
+	EQUAL     = "=="
+	NOT_EQUAL = "!="
+	PLUS      = "+"
+	MINUS     = "-"
+	BANG      = "!"
+	ASTERISK  = "*"
+	SLASH     = "/"
 
-	// Delimiters
-	COMMA     = ","
-	SEMICOLON = ";"
+	LT = "<"
+	GT = ">"
 
-	LPAREN = "("
-	RPAREN = ")"
-	LBRACE = "{"
-	RBRACE = "}"
+	// Separators
+	COMMA        = ","
+	DOT          = "."
+	COLON        = ":"
+	SEMICOLON    = ";"
+	SINGLE_QUOTE = "'"
+	DOUBLE_QUOTE = "\""
+
+	// Delimeters
+	LPAREN   = "("
+	RPAREN   = ")"
+	LBRACKET = "["
+	RBRACKET = "]"
+	LBRACE   = "{"
+	RBRACE   = "}"
 
 	// Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
+	WHILE    = "WHILE"
+	STRUCT   = "STRUCT"
+	STRING   = "string"
+	DOUBLE   = "DOUBLE"
+	INT      = "INT"
 )
+
+var keywords = map[string]TokenType{
+	"fun":    FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
+	"while":  WHILE,
+	"struct": STRUCT,
+	"string": STRING,
+	"double": DOUBLE,
+	"int":    INT,
+}
+
+func GetIdentifierType(identifier string) TokenType {
+	if tok, ok := keywords[identifier]; ok {
+		return tok
+	}
+	return IDENT
+}
