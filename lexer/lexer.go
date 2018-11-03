@@ -106,7 +106,7 @@ func (lexer *Lexer) NextToken() token.Token {
 			// early return to avoid increasing read position
 			return tok
 		} else {
-			return newToken(token.ILLEGAL, lexer.ch)
+			tok = newToken(token.ILLEGAL, lexer.ch)
 		}
 	}
 
