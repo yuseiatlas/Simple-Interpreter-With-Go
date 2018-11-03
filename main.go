@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/yuseiatlas/lexer/repl"
+	"github.com/yuseiatlas/interpreter/repl"
 	"os"
 	"os/user"
 )

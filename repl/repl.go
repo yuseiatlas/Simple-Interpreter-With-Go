@@ -3,8 +3,8 @@ package repl
 import (
 	"bufio"
 	"fmt"
-	"github.com/yuseiatlas/lexer/lexer"
-	"github.com/yuseiatlas/lexer/token"
+	"github.com/yuseiatlas/interpreter/lexer"
+	"github.com/yuseiatlas/interpreter/token"
 	"io"
 )
 

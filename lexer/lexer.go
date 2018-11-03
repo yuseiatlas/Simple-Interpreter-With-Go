@@ -1,6 +1,6 @@
 package lexer
 
-import "github.com/yuseiatlas/lexer/token"
+import "github.com/yuseiatlas/interpreter/token"
 
 type Lexer struct {
 	input        string

@@ -1,7 +1,7 @@
 package lexer
 
 import (
-	"github.com/yuseiatlas/lexer/token"
+	"github.com/yuseiatlas/interpreter/token"
 	"testing"
 )
 
